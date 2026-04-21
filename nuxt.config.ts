@@ -44,16 +44,10 @@ export default defineNuxtConfig({
         resolvers: [ElementPlusResolver()],
       }),
       Components({
-        resolvers: [ElementPlusResolver({ importStyle: false })]  // // importStyle: false  禁用自动导入样式,必须加这个，不然服务端会nodejs报错
+        resolvers: [ElementPlusResolver({ importStyle: false })]
       }),
-    ],
-    // optimizeDeps: {
-    //   include: ['@popperjs/core', 'element-plus']
-    // }
+    ]
   },
-  // build: {
-  //   transpile: ['@popperjs/core', 'element-plus'] // pnpm build后找不到@popperjs/core，所以加这个配置
-  // },
   // nitro: {
   //   externals: {
   //     inline: ['@popperjs/core']
@@ -61,5 +55,5 @@ export default defineNuxtConfig({
   // },
   compatibilityDate: '2025-05-15',
   devtools: { enabled: false },
-  css: ['element-plus/dist/index.css','@/assets/css/tailwind.css', '@/assets/css/_variables.scss', '@/assets/css/font.css'],
+  css: ['@/assets/css/tailwind.css', '@/assets/css/_variables.scss', '@/assets/css/font.css'],
 })

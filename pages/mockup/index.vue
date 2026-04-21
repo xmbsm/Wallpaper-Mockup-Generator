@@ -2856,7 +2856,7 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="tools">
+      <div class="tools" :class="{ 'tools-vertical': isVerticalScreen, 'tools-landscape': !isVerticalScreen }">
 
         <a class="icp-number" v-if="!isMiniProgram && !isVerticalScreen && isChinaRegion"
           href="https://beian.miit.gov.cn" target="_blank">蜀ICP备2023035883号-5</a>
@@ -3366,7 +3366,6 @@ video {
   .tools {
     height: 60px;
     box-sizing: border-box;
-    width: 372px;
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -3454,6 +3453,17 @@ video {
       }
     }
 
+  }
+
+  .tools-landscape {
+    width: 400px;
+  }
+
+  .tools-vertical {
+    width: 100%;
+    right: 0;
+    bottom: 0;
+    border-radius: 0;
   }
 }
 
